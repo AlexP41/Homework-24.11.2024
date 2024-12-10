@@ -1,22 +1,22 @@
-/*
-	ФУНКЦІЇ
+п»ї/*
+	Р¤РЈРќРљР¦Р†Р‡
 	=======
 
 
-№5
-	Напишіть функцію, яка приймає одновимірний масив зі 100 цілих чисел, заповнених випадковим чином (вивести у вигляді таблиці 10Х10),
-	і знаходить позицію, з якої починається послідовність з 10 чисел, сума яких мінімальна
+в„–5
+	РќР°РїРёС€С–С‚СЊ С„СѓРЅРєС†С–СЋ, СЏРєР° РїСЂРёР№РјР°С” РѕРґРЅРѕРІРёРјС–СЂРЅРёР№ РјР°СЃРёРІ Р·С– 100 С†С–Р»РёС… С‡РёСЃРµР», Р·Р°РїРѕРІРЅРµРЅРёС… РІРёРїР°РґРєРѕРІРёРј С‡РёРЅРѕРј (РІРёРІРµСЃС‚Рё Сѓ РІРёРіР»СЏРґС– С‚Р°Р±Р»РёС†С– 10РҐ10),
+	С– Р·РЅР°С…РѕРґРёС‚СЊ РїРѕР·РёС†С–СЋ, Р· СЏРєРѕС— РїРѕС‡РёРЅР°С”С‚СЊСЃСЏ РїРѕСЃР»С–РґРѕРІРЅС–СЃС‚СЊ Р· 10 С‡РёСЃРµР», СЃСѓРјР° СЏРєРёС… РјС–РЅС–РјР°Р»СЊРЅР°
 
 
 
 
-+++++++ Навчальний матеріал знаходиться за посиланням
++++++++ РќР°РІС‡Р°Р»СЊРЅРёР№ РјР°С‚РµСЂС–Р°Р» Р·РЅР°С…РѕРґРёС‚СЊСЃСЏ Р·Р° РїРѕСЃРёР»Р°РЅРЅСЏРј
 	https://fsx1.itstep.org/api/v1/files/v7HPgHcT8eeoPIvbWucTtQp
 */
 
 /*
-№1
-	Написати прототип функцію, що виводить на екран min та max із трьох чисел.
+в„–1
+	РќР°РїРёСЃР°С‚Рё РїСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†С–СЋ, С‰Рѕ РІРёРІРѕРґРёС‚СЊ РЅР° РµРєСЂР°РЅ min С‚Р° max С–Р· С‚СЂСЊРѕС… С‡РёСЃРµР».
 */
 
 /*
@@ -30,14 +30,14 @@ int main() {
 	void minMaxFunction(int n1, int n2, int n3);
 
 	int num1, num2, num3;
-	cout << "Введіть три чсила через пробіл" << endl; 
-	cout << "Перше число: ";
+	cout << "Р’РІРµРґС–С‚СЊ С‚СЂРё С‡СЃРёР»Р° С‡РµСЂРµР· РїСЂРѕР±С–Р»" << endl; 
+	cout << "РџРµСЂС€Рµ С‡РёСЃР»Рѕ: ";
 	cin >> num1;
 	cout << endl;
-	cout << "Друге число: ";
+	cout << "Р”СЂСѓРіРµ С‡РёСЃР»Рѕ: ";
 	cin >> num2;
 	cout << endl;
-	cout << "Третє число: ";
+	cout << "РўСЂРµС‚С” С‡РёСЃР»Рѕ: ";
 	cin >> num3;
 	cout << endl;
 
@@ -54,15 +54,15 @@ void minMaxFunction(int n1, int n2, int n3) {
 		if (max < num) max = num;
 	}
 
-	cout << "Мінімальне значення: " << min << endl;
-	cout << "Максимальне значення: " << max << endl;
+	cout << "РњС–РЅС–РјР°Р»СЊРЅРµ Р·РЅР°С‡РµРЅРЅСЏ: " << min << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅРµ Р·РЅР°С‡РµРЅРЅСЏ: " << max << endl;
 }
 */
 
 /*
-№2
-	Написати прототип функцію, що визначає кількість додатних, від'ємних і нульових елементів переданого їй масиву.
-	Розмір вказує користувач, заповнення масиву рандомне.
+в„–2
+	РќР°РїРёСЃР°С‚Рё РїСЂРѕС‚РѕС‚РёРї С„СѓРЅРєС†С–СЋ, С‰Рѕ РІРёР·РЅР°С‡Р°С” РєС–Р»СЊРєС–СЃС‚СЊ РґРѕРґР°С‚РЅРёС…, РІС–Рґ'С”РјРЅРёС… С– РЅСѓР»СЊРѕРІРёС… РµР»РµРјРµРЅС‚С–РІ РїРµСЂРµРґР°РЅРѕРіРѕ С—Р№ РјР°СЃРёРІСѓ.
+	Р РѕР·РјС–СЂ РІРєР°Р·СѓС” РєРѕСЂРёСЃС‚СѓРІР°С‡, Р·Р°РїРѕРІРЅРµРЅРЅСЏ РјР°СЃРёРІСѓ СЂР°РЅРґРѕРјРЅРµ.
 */
 /*
 #include <iostream>
@@ -105,17 +105,17 @@ void NumbersForArray(int length, vector <int> arr) {
 		num > 0 ? SumForPos++ : num < 0 ? SumForNeg++ : SumForZer++;
 	}
 
-	cout << "\033[031mКількість позитивних значень у масиві: \033[0m" << SumForPos << endl;
-	cout << "\033[032mКількість негативних значень у масиві: \033[0m" << SumForNeg << endl;
-	cout << "\033[033mКількість нулів у масиві: \033[0m" << SumForZer << endl;
+	cout << "\033[031mРљС–Р»СЊРєС–СЃС‚СЊ РїРѕР·РёС‚РёРІРЅРёС… Р·РЅР°С‡РµРЅСЊ Сѓ РјР°СЃРёРІС–: \033[0m" << SumForPos << endl;
+	cout << "\033[032mРљС–Р»СЊРєС–СЃС‚СЊ РЅРµРіР°С‚РёРІРЅРёС… Р·РЅР°С‡РµРЅСЊ Сѓ РјР°СЃРёРІС–: \033[0m" << SumForNeg << endl;
+	cout << "\033[033mРљС–Р»СЊРєС–СЃС‚СЊ РЅСѓР»С–РІ Сѓ РјР°СЃРёРІС–: \033[0m" << SumForZer << endl;
 }
 */
 
 /*
-№3
-	Дан масив чисел розмірністю 10 елементів. Написати функцію, яка сортує масив за зростанням або за спаданням,
-	залежно від третього параметра функції. Якщо він дорівнює 1, сортування йде за спаданням, якщо 0, то за зростанням.
-	 Перші 2 параметри функції — це масиві його розмір, третій параметр за замовчуванням дорівнює 1.
+в„–3
+	Р”Р°РЅ РјР°СЃРёРІ С‡РёСЃРµР» СЂРѕР·РјС–СЂРЅС–СЃС‚СЋ 10 РµР»РµРјРµРЅС‚С–РІ. РќР°РїРёСЃР°С‚Рё С„СѓРЅРєС†С–СЋ, СЏРєР° СЃРѕСЂС‚СѓС” РјР°СЃРёРІ Р·Р° Р·СЂРѕСЃС‚Р°РЅРЅСЏРј Р°Р±Рѕ Р·Р° СЃРїР°РґР°РЅРЅСЏРј,
+	Р·Р°Р»РµР¶РЅРѕ РІС–Рґ С‚СЂРµС‚СЊРѕРіРѕ РїР°СЂР°РјРµС‚СЂР° С„СѓРЅРєС†С–С—. РЇРєС‰Рѕ РІС–РЅ РґРѕСЂС–РІРЅСЋС” 1, СЃРѕСЂС‚СѓРІР°РЅРЅСЏ Р№РґРµ Р·Р° СЃРїР°РґР°РЅРЅСЏРј, СЏРєС‰Рѕ 0, С‚Рѕ Р·Р° Р·СЂРѕСЃС‚Р°РЅРЅСЏРј.
+	 РџРµСЂС€С– 2 РїР°СЂР°РјРµС‚СЂРё С„СѓРЅРєС†С–С— вЂ” С†Рµ РјР°СЃРёРІС– Р№РѕРіРѕ СЂРѕР·РјС–СЂ, С‚СЂРµС‚С–Р№ РїР°СЂР°РјРµС‚СЂ Р·Р° Р·Р°РјРѕРІС‡СѓРІР°РЅРЅСЏРј РґРѕСЂС–РІРЅСЋС” 1.
 */
 /*
 #include <iostream>
@@ -149,16 +149,16 @@ int main() {
 
 	int userChoice;
 	while (true) {
-		cout << "\033[033mЯк бажаєте відсортувати масив?\nЗа спаданням - 1;\nЗа зростанням - 0;\nВаш вибір: \033[0m";
+		cout << "\033[033mРЇРє Р±Р°Р¶Р°С”С‚Рµ РІС–РґСЃРѕСЂС‚СѓРІР°С‚Рё РјР°СЃРёРІ?\nР—Р° СЃРїР°РґР°РЅРЅСЏРј - 1;\nР—Р° Р·СЂРѕСЃС‚Р°РЅРЅСЏРј - 0;\nР’Р°С€ РІРёР±С–СЂ: \033[0m";
 		cin >> userChoice;
 		if (cin.fail()) {
-			cout << "\033[031m Помилка! Будь ласка, введіть число(1 або 0).\033[0m\n";
+			cout << "\033[031m РџРѕРјРёР»РєР°! Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРІРµРґС–С‚СЊ С‡РёСЃР»Рѕ(1 Р°Р±Рѕ 0).\033[0m\n";
 			cin.clear(); 
 			cin.ignore(1000, '\n');
 			continue;
 		}
 		if (userChoice != 1 && userChoice != 0) {
-			cout << "\033[031m Помилка! Будь ласка, введіть або 1, або 0.\033[0m\n";
+			cout << "\033[031m РџРѕРјРёР»РєР°! Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРІРµРґС–С‚СЊ Р°Р±Рѕ 1, Р°Р±Рѕ 0.\033[0m\n";
 			cin.clear();
 			cin.ignore(1000, '\n');
 			continue;
@@ -174,7 +174,7 @@ int main() {
 void NumbersForArray(int length, int arr[], int pathToSort = 1) {
 
 	pathToSort == 1 ? (sort(arr, arr + length), reverse(arr, arr + length)) : sort(arr, arr + length);
-	cout << "Відсортований масив: ";
+	cout << "Р’С–РґСЃРѕСЂС‚РѕРІР°РЅРёР№ РјР°СЃРёРІ: ";
 	for (int i = 0; i < LENGTH; i++) {
 		cout << setw(5) << arr[i];
 	}
@@ -183,20 +183,21 @@ void NumbersForArray(int length, int arr[], int pathToSort = 1) {
 */
 
 /*
-№4
-	Гра "Кубики". Умова: є два гральні кубики зі значеннями від 1 до 6. Гра відбувається з комп'ютером,
-	кубики кидаються по черзі. Перемагає той, у кого сума балів, що випали, за підсумками п'яти кидків більше.
-	Передбачте можливість отримання першого ходу людиною чи комп'ютером. Кубики відображаються за допомогою символів.
-	Наприкінці гри необхідно виводити середню суму за кидками для обох учасників. Розбити гру на декалька функцій.
+в„–4
+	Р“СЂР° "РљСѓР±РёРєРё". РЈРјРѕРІР°: С” РґРІР° РіСЂР°Р»СЊРЅС– РєСѓР±РёРєРё Р·С– Р·РЅР°С‡РµРЅРЅСЏРјРё РІС–Рґ 1 РґРѕ 6. Р“СЂР° РІС–РґР±СѓРІР°С”С‚СЊСЃСЏ Р· РєРѕРјРї'СЋС‚РµСЂРѕРј,
+	РєСѓР±РёРєРё РєРёРґР°СЋС‚СЊСЃСЏ РїРѕ С‡РµСЂР·С–. РџРµСЂРµРјР°РіР°С” С‚РѕР№, Сѓ РєРѕРіРѕ СЃСѓРјР° Р±Р°Р»С–РІ, С‰Рѕ РІРёРїР°Р»Рё, Р·Р° РїС–РґСЃСѓРјРєР°РјРё Рї'СЏС‚Рё РєРёРґРєС–РІ Р±С–Р»СЊС€Рµ.
+	РџРµСЂРµРґР±Р°С‡С‚Рµ РјРѕР¶Р»РёРІС–СЃС‚СЊ РѕС‚СЂРёРјР°РЅРЅСЏ РїРµСЂС€РѕРіРѕ С…РѕРґСѓ Р»СЋРґРёРЅРѕСЋ С‡Рё РєРѕРјРї'СЋС‚РµСЂРѕРј. РљСѓР±РёРєРё РІС–РґРѕР±СЂР°Р¶Р°СЋС‚СЊСЃСЏ Р·Р° РґРѕРїРѕРјРѕРіРѕСЋ СЃРёРјРІРѕР»С–РІ.
+	РќР°РїСЂРёРєС–РЅС†С– РіСЂРё РЅРµРѕР±С…С–РґРЅРѕ РІРёРІРѕРґРёС‚Рё СЃРµСЂРµРґРЅСЋ СЃСѓРјСѓ Р·Р° РєРёРґРєР°РјРё РґР»СЏ РѕР±РѕС… СѓС‡Р°СЃРЅРёРєС–РІ. Р РѕР·Р±РёС‚Рё РіСЂСѓ РЅР° РґРµРєР°Р»СЊРєР° С„СѓРЅРєС†С–Р№.
 */
 
 #include <iostream>
+#include <locale>
 #include <vector>
 #include <ctime>
 #include <iomanip>
 #include <algorithm>
-#include <thread>  // Для std::this_thread::sleep_for
-#include <chrono>  // Для std::chrono::seconds
+#include <thread>  // Р”Р»СЏ std::this_thread::sleep_for
+#include <chrono>  // Р”Р»СЏ std::chrono::seconds
 
 
 using namespace std;
@@ -204,6 +205,8 @@ using namespace std;
 const int numberOfDiceRolling = 5;
 
 int main() {
+	setlocale(LC_ALL, "ukr");
+
 	srand(time(NULL));
 	system("chcp 1251>null");
 
@@ -225,16 +228,16 @@ int main() {
 bool WhoThrow_a_DiceFirst() {
 	int randomNumber, userChoice;
 	while (true) {
-		cout << "\033[033mЗагадайте число (1 або 2)\nВаш вибір: \033[0m";
+		cout << "\033[033mР—Р°РіР°РґР°Р№С‚Рµ С‡РёСЃР»Рѕ (1 Р°Р±Рѕ 2)\nР’Р°С€ РІРёР±С–СЂ: \033[0m";
 		cin >> userChoice;
 		if (cin.fail()) {
-			cout << "\033[031m Помилка! Будь ласка, введіть число(1 або 2).\033[0m\n";
+			cout << "\033[031m РџРѕРјРёР»РєР°! Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРІРµРґС–С‚СЊ С‡РёСЃР»Рѕ(1 Р°Р±Рѕ 2).\033[0m\n";
 			cin.clear();
 			cin.ignore(1000, '\n');
 			continue;
 		}
 		if (userChoice != 1 && userChoice != 2) {
-			cout << "\033[031m Помилка! Будь ласка, введіть або 1, або 2.\033[0m\n";
+			cout << "\033[031m РџРѕРјРёР»РєР°! Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРІРµРґС–С‚СЊ Р°Р±Рѕ 1, Р°Р±Рѕ 2.\033[0m\n";
 			cin.clear();
 			cin.ignore(1000, '\n');
 			continue;
@@ -242,10 +245,10 @@ bool WhoThrow_a_DiceFirst() {
 		break;
 	}
 
-	cout << "\033[032mГенерація числа ...\033[0m" << endl;
+	cout << "\033[032mР“РµРЅРµСЂР°С†С–СЏ С‡РёСЃР»Р° ...\033[0m" << endl;
 	this_thread::sleep_for(chrono::seconds(2));
 	randomNumber = 1 + rand() % 2;
-	cout << "Рандомне число: " << randomNumber << endl;
+	cout << "Р Р°РЅРґРѕРјРЅРµ С‡РёСЃР»Рѕ: " << randomNumber << endl;
 
 	return randomNumber == userChoice ? true : false;
 }
@@ -279,12 +282,12 @@ void userThrow(int &randFaceNum, int& sumOfPoints_User, int& sumOfPoints_Compute
 	randFaceNum = 1 + rand() % 6;
 	sumOfPoints_User += randFaceNum;
 
-	cout << "Ваш кидок: " << endl;
+	cout << "Р’Р°С€ РєРёРґРѕРє: " << endl;
 	this_thread::sleep_for(chrono::seconds(2));
 	printDieFace(randFaceNum);
-	if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[32mВаша поточна сума становить: ";
-	else if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[031mВаша поточна сума становить: ";
-	else cout << "\033[033mВаша поточна сума становить: ";
+	if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[32mР’Р°С€Р° РїРѕС‚РѕС‡РЅР° СЃСѓРјР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
+	else if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[031mР’Р°С€Р° РїРѕС‚РѕС‡РЅР° СЃСѓРјР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
+	else cout << "\033[033mР’Р°С€Р° РїРѕС‚РѕС‡РЅР° СЃСѓРјР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
 
 	cout << sumOfPoints_User;
 	cout << "\033[0m" << endl;
@@ -294,33 +297,33 @@ void computerThrow(int& randFaceNum, int& sumOfPoints_User, int& sumOfPoints_Com
 	randFaceNum = 1 + rand() % 6;
 	sumOfPoints_Computer += randFaceNum;
 
-	cout << "Кидок комп'ютера: " << endl;
+	cout << "РљРёРґРѕРє РєРѕРјРї'СЋС‚РµСЂР°: " << endl;
 	this_thread::sleep_for(chrono::seconds(2));
 	printDieFace(randFaceNum);
-	if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[32mПоточна сума комп'ютера становить: ";
-	else if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[031mПоточна сума комп'ютера становить: ";
-	else cout << "\033[033mПоточна сума комп'ютера становить: ";
+	if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[32mРџРѕС‚РѕС‡РЅР° СЃСѓРјР° РєРѕРјРї'СЋС‚РµСЂР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
+	else if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[031mРџРѕС‚РѕС‡РЅР° СЃСѓРјР° РєРѕРјРї'СЋС‚РµСЂР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
+	else cout << "\033[033mРџРѕС‚РѕС‡РЅР° СЃСѓРјР° РєРѕРјРї'СЋС‚РµСЂР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
 
 	cout << sumOfPoints_Computer;
 	cout << "\033[0m" << endl;
 }
 
 void summinUp(int& sumOfPoints_User, int& sumOfPoints_Computer) {
-	cout << "\033[034mПідведення підсумків ... \033[0m" << endl;
+	cout << "\033[034mРџС–РґРІРµРґРµРЅРЅСЏ РїС–РґСЃСѓРјРєС–РІ ... \033[0m" << endl;
 
 	this_thread::sleep_for(chrono::seconds(3));
-	if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[32mВаша остаточна сума становить: ";
-	else if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[031mВаша остаточна сума становить: ";
-	else cout << "\033[033mВаша остаточна сума становить: ";
+	if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[32mР’Р°С€Р° РѕСЃС‚Р°С‚РѕС‡РЅР° СЃСѓРјР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
+	else if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[031mР’Р°С€Р° РѕСЃС‚Р°С‚РѕС‡РЅР° СЃСѓРјР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
+	else cout << "\033[033mР’Р°С€Р° РѕСЃС‚Р°С‚РѕС‡РЅР° СЃСѓРјР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
 	this_thread::sleep_for(chrono::seconds(2));
 
 	cout << sumOfPoints_User;
 	cout << "\033[0m" << endl;
 
 	this_thread::sleep_for(chrono::seconds(3));
-	if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[32mОстаточна сума комп'ютера становить: ";
-	else if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[031mОстаточна сума комп'ютера становить: ";
-	else cout << "\033[033mОстаточна сума комп'ютера становить: ";
+	if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[32mРћСЃС‚Р°С‚РѕС‡РЅР° СЃСѓРјР° РєРѕРјРї'СЋС‚РµСЂР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
+	else if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[031mРћСЃС‚Р°С‚РѕС‡РЅР° СЃСѓРјР° РєРѕРјРї'СЋС‚РµСЂР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
+	else cout << "\033[033mРћСЃС‚Р°С‚РѕС‡РЅР° СЃСѓРјР° РєРѕРјРї'СЋС‚РµСЂР° СЃС‚Р°РЅРѕРІРёС‚СЊ: ";
 
 	this_thread::sleep_for(chrono::seconds(2));
 	cout << sumOfPoints_Computer;
@@ -331,20 +334,20 @@ void summinUp(int& sumOfPoints_User, int& sumOfPoints_Computer) {
 	cout << "\033[2J\033[1;1H";
 
 
-	if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[31m На жаль, Ви програли(" << endl;
-	else if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[032mВітаю! Ви перемогли!" << endl;
-	else cout << "\033[033mБойова нічия!" << endl;
+	if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[31m РќР° Р¶Р°Р»СЊ, Р’Рё РїСЂРѕРіСЂР°Р»Рё(" << endl;
+	else if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[032mР’С–С‚Р°СЋ! Р’Рё РїРµСЂРµРјРѕРіР»Рё!" << endl;
+	else cout << "\033[033mР‘РѕР№РѕРІР° РЅС–С‡РёСЏ!" << endl;
 
 	cout << "\033[0m" << endl;
 }
 
 void userWon(int sumOfPoints_Computer = 0, int sumOfPoints_User = 0) {
-	cout << "\033[032mВітаю! Ви ходите першим.\033[0m" << endl;
+	cout << "\033[032mР’С–С‚Р°СЋ! Р’Рё С…РѕРґРёС‚Рµ РїРµСЂС€РёРј.\033[0m" << endl;
 	int randFaceNum = 0;
 	for (int i = 0; i < numberOfDiceRolling; i++) {
 
 		this_thread::sleep_for(chrono::seconds(1));
-		cout << endl << "\t\t\t\t\033[033mПАРТІЯ " << (i + 1) << "\033[0m" << endl;
+		cout << endl << "\t\t\t\t\033[033mРџРђР РўР†РЇ " << (i + 1) << "\033[0m" << endl;
 		this_thread::sleep_for(chrono::seconds(1));
 
 		// Player's throw
@@ -363,12 +366,12 @@ void userWon(int sumOfPoints_Computer = 0, int sumOfPoints_User = 0) {
 }
 
 void computerWon(int sumOfPoints_Computer = 0, int sumOfPoints_User = 0) {
-	cout << "\033[031mНа жаль Ви не вгадали( Комп'ютер ходить першим першим.\033[0m" << endl;
+	cout << "\033[031mРќР° Р¶Р°Р»СЊ Р’Рё РЅРµ РІРіР°РґР°Р»Рё( РљРѕРјРї'СЋС‚РµСЂ С…РѕРґРёС‚СЊ РїРµСЂС€РёРј РїРµСЂС€РёРј.\033[0m" << endl;
 	int randFaceNum = 0;
 	for (int i = 0; i < numberOfDiceRolling; i++) {
 
 		this_thread::sleep_for(chrono::seconds(1));
-		cout << endl << "\t\t\t\t\033[033mПАРТІЯ " << (i + 1) << "\033[0m" << endl;
+		cout << endl << "\t\t\t\t\033[033mРџРђР РўР†РЇ " << (i + 1) << "\033[0m" << endl;
 		this_thread::sleep_for(chrono::seconds(1));
 
 		// Computer's throw
