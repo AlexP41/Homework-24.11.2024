@@ -3,13 +3,6 @@
 	=======
 
 
-№5
-	Напишіть функцію, яка приймає одновимірний масив зі 100 цілих чисел, заповнених випадковим чином (вивести у вигляді таблиці 10Х10),
-	і знаходить позицію, з якої починається послідовність з 10 чисел, сума яких мінімальна
-
-
-
-
 +++++++ Навчальний матеріал знаходиться за посиланням
 	https://fsx1.itstep.org/api/v1/files/v7HPgHcT8eeoPIvbWucTtQp
 */
@@ -190,6 +183,7 @@ void NumbersForArray(int length, int arr[], int pathToSort = 1) {
 	Наприкінці гри необхідно виводити середню суму за кидками для обох учасників. Розбити гру на декалька функцій.
 */
 
+/*
 #include <iostream>
 #include <locale>
 #include <vector>
@@ -389,4 +383,72 @@ void computerWon(int sumOfPoints_Computer = 0, int sumOfPoints_User = 0) {
 	summinUp(sumOfPoints_User, sumOfPoints_Computer);
 }
 
+*/
 
+/*
+
+№5
+	Напишіть функцію, яка приймає одновимірний масив зі 100 цілих чисел, заповнених випадковим чином (вивести у вигляді таблиці 10Х10),
+	і знаходить позицію, з якої починається послідовність з 10 чисел, сума яких мінімальна
+*/
+
+#include <iostream>
+#include <locale>
+#include <ctime>
+#include <iomanip>
+#include <climits>
+#include <windows.h>
+
+using namespace std;
+
+void findMinSumSequence(int arrLength, int rowLength, int arr[]);
+
+int main() {
+	SetConsoleOutputCP(CP_UTF8);
+	SetConsoleCP(CP_UTF8);
+	
+	setlocale(LC_ALL, "ukr");
+	system("chcp 1251>null");
+
+	srand(time(NULL));
+
+	const int arrLength = 100;
+	const int rowLength = 10;
+	int arr[arrLength];
+	for (int i = 0; i < 100; ++i) 
+	{
+		arr[i] = -100 + rand() % 201;
+	}
+
+	cout << "\033[33mМасив із 100 елементів: \033[0m" << endl;
+	for (int i = 0; i < 100; ++i)
+	{
+		if ((i+1) % 10 != 0) cout << setw(5) << arr[i];
+		else cout << setw(5) << arr[i] << endl;
+	}
+
+	findMinSumSequence(arrLength, rowLength, arr);
+
+	return 0;
+}
+
+void findMinSumSequence(int arrLength, int rowLength, int arr[]) {
+	int minSum = INT_MAX;
+	int minPosition = -1;
+
+	for (int i = 0; i <= (arrLength - rowLength); ++i) { 
+		int currentSum = 0;
+
+		for (int j = 0; j < rowLength; ++j) {
+			currentSum += arr[i + j];
+		}
+
+		if (currentSum < minSum) {
+			minSum = currentSum;
+			minPosition = i;
+		}
+	}
+
+	cout << "Мінімальна сума: " << minSum << endl;
+	cout << "Позиція, з якої починається послідовність: " << minPosition << endl;
+}
