@@ -275,44 +275,37 @@ void printDieFace(int face) {
 	}
 }
 
-void userWon(int sumOfPoints_Computer = 0, int sumOfPoints_User = 0) {
-	cout << "\033[032mВітаю! Ви ходите першим.\033[0m" << endl;
-	int randFaceNum;
-	for (int i = 0; i < numberOfDiceRolling; i++) {
+void userThrow(int &randFaceNum, int& sumOfPoints_User, int& sumOfPoints_Computer) {
+	randFaceNum = 1 + rand() % 6;
+	sumOfPoints_User += randFaceNum;
 
-		// Player's throw
+	cout << "Ваш кидок: " << endl;
+	this_thread::sleep_for(chrono::seconds(2));
+	printDieFace(randFaceNum);
+	if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[32mВаша поточна сума становить: ";
+	else if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[031mВаша поточна сума становить: ";
+	else cout << "\033[033mВаша поточна сума становить: ";
 
-		randFaceNum = 1 + rand() % 6;
-		sumOfPoints_User += randFaceNum;
+	cout << sumOfPoints_User;
+	cout << "\033[0m" << endl;
+}
 
-		cout << "Ваш кидок: " << endl;
-		this_thread::sleep_for(chrono::seconds(2));
-		printDieFace(randFaceNum);
-		if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[32mВаша поточна сума становить: ";
-		else if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[031mВаша поточна сума становить: ";
-		else cout << "\033[033mВаша поточна сума становить: ";
+void computerThrow(int& randFaceNum, int& sumOfPoints_User, int& sumOfPoints_Computer) {
+	randFaceNum = 1 + rand() % 6;
+	sumOfPoints_Computer += randFaceNum;
 
-		cout << sumOfPoints_User;
-		cout << "\033[0m" << endl;
+	cout << "Кидок комп'ютера: " << endl;
+	this_thread::sleep_for(chrono::seconds(2));
+	printDieFace(randFaceNum);
+	if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[32mПоточна сума комп'ютера становить: ";
+	else if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[031mПоточна сума комп'ютера становить: ";
+	else cout << "\033[033mПоточна сума комп'ютера становить: ";
 
-		// Computer's throw
+	cout << sumOfPoints_Computer;
+	cout << "\033[0m" << endl;
+}
 
-		randFaceNum = 1 + rand() % 6;
-		sumOfPoints_Computer += randFaceNum;
-
-		cout << "Кидок комп'ютера: " << endl;
-		this_thread::sleep_for(chrono::seconds(2));
-		printDieFace(randFaceNum);
-		if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[32mПоточна сума комп'ютера становить: ";
-		else if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[031mПоточна сума комп'ютера становить: ";
-		else cout << "\033[033mПоточна сума комп'ютера становить: ";
-
-		cout << sumOfPoints_Computer;
-		cout << "\033[0m" << endl;
-	}
-
-
-	// Summing up
+void summinUp(int& sumOfPoints_User, int& sumOfPoints_Computer) {
 	cout << "\033[034mПідведення підсумків ... \033[0m" << endl;
 
 	this_thread::sleep_for(chrono::seconds(3));
@@ -343,75 +336,54 @@ void userWon(int sumOfPoints_Computer = 0, int sumOfPoints_User = 0) {
 	else cout << "\033[033mБойова нічия!" << endl;
 
 	cout << "\033[0m" << endl;
+}
+
+void userWon(int sumOfPoints_Computer = 0, int sumOfPoints_User = 0) {
+	cout << "\033[032mВітаю! Ви ходите першим.\033[0m" << endl;
+	int randFaceNum = 0;
+	for (int i = 0; i < numberOfDiceRolling; i++) {
+
+		this_thread::sleep_for(chrono::seconds(1));
+		cout << endl << "\t\t\t\t\033[033mПАРТІЯ " << (i + 1) << "\033[0m" << endl;
+		this_thread::sleep_for(chrono::seconds(1));
+
+		// Player's throw
+
+		userThrow(randFaceNum, sumOfPoints_User, sumOfPoints_Computer);
+
+		// Computer's throw
+
+		computerThrow(randFaceNum, sumOfPoints_User, sumOfPoints_Computer);
+
+	}
+
+
+	// Summing up
+	summinUp(sumOfPoints_User, sumOfPoints_Computer);
 }
 
 void computerWon(int sumOfPoints_Computer = 0, int sumOfPoints_User = 0) {
 	cout << "\033[031mНа жаль Ви не вгадали( Комп'ютер ходить першим першим.\033[0m" << endl;
-	int randFaceNum;
+	int randFaceNum = 0;
 	for (int i = 0; i < numberOfDiceRolling; i++) {
+
+		this_thread::sleep_for(chrono::seconds(1));
+		cout << endl << "\t\t\t\t\033[033mПАРТІЯ " << (i + 1) << "\033[0m" << endl;
+		this_thread::sleep_for(chrono::seconds(1));
 
 		// Computer's throw
 
-		randFaceNum = 1 + rand() % 6;
-		sumOfPoints_Computer += randFaceNum;
-
-		cout << "Кидок комп'ютера: " << endl;
-		this_thread::sleep_for(chrono::seconds(2));
-		printDieFace(randFaceNum);
-		if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[32mПоточна сума комп'ютера становить: ";
-		else if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[031mПоточна сума комп'ютера становить: ";
-		else cout << "\033[033mПоточна сума комп'ютера становить: ";
-
-		cout << sumOfPoints_Computer;
-		cout << "\033[0m" << endl;
+		computerThrow(randFaceNum, sumOfPoints_User, sumOfPoints_Computer);
 
 		// Player's throw
 
-		randFaceNum = 1 + rand() % 6;
-		sumOfPoints_User += randFaceNum;
-
-		cout << "Ваш кидок: " << endl;
-		this_thread::sleep_for(chrono::seconds(2));
-		printDieFace(randFaceNum);
-		if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[32mВаша поточна сума становить: ";
-		else if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[031mВаша поточна сума становить: ";
-		else cout << "\033[033mВаша поточна сума становить: ";
-
-		cout << sumOfPoints_User;
-		cout << "\033[0m" << endl;
+		userThrow(randFaceNum, sumOfPoints_User, sumOfPoints_Computer);
 
 	}
 
 	// Summing up
-	cout << "\033[034mПідведення підсумків ... \033[0m" << endl;
 
-	this_thread::sleep_for(chrono::seconds(3));
-	if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[32mВаша остаточна сума становить: ";
-	else if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[031mВаша остаточна сума становить: ";
-	else cout << "\033[033mВаша остаточна сума становить: ";
-	this_thread::sleep_for(chrono::seconds(2));
-
-	cout << sumOfPoints_User;
-	cout << "\033[0m" << endl;
-
-	this_thread::sleep_for(chrono::seconds(3));
-	if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[32mОстаточна сума комп'ютера становить: ";
-	else if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[031mОстаточна сума комп'ютера становить: ";
-	else cout << "\033[033mОстаточна сума комп'ютера становить: ";
-
-	this_thread::sleep_for(chrono::seconds(2));
-	cout << sumOfPoints_Computer;
-	cout << "\033[0m" << endl;
-
-	this_thread::sleep_for(chrono::seconds(2));
-
-	cout << "\033[2J\033[1;1H";
-
-
-	if (sumOfPoints_Computer > sumOfPoints_User) cout << "\033[31m На жаль, Ви програли(" << endl;
-	else if (sumOfPoints_Computer < sumOfPoints_User) cout << "\033[032mВітаю! Ви перемогли!" << endl;
-	else cout << "\033[033mБойова нічия!" << endl;
-
-	cout << "\033[0m" << endl;
+	summinUp(sumOfPoints_User, sumOfPoints_Computer);
 }
+
 
